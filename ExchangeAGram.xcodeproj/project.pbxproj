@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		17E5C24F1A6FE04E001A6665 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E5C24E1A6FE04E001A6665 /* AppDelegate.swift */; };
 		17E5C2521A6FE04E001A6665 /* ExchangeAGram.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 17E5C2501A6FE04E001A6665 /* ExchangeAGram.xcdatamodeld */; };
-		17E5C2541A6FE04E001A6665 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E5C2531A6FE04E001A6665 /* ViewController.swift */; };
 		17E5C2571A6FE04E001A6665 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17E5C2551A6FE04E001A6665 /* Main.storyboard */; };
 		17E5C2591A6FE04E001A6665 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17E5C2581A6FE04E001A6665 /* Images.xcassets */; };
 		17E5C25C1A6FE04E001A6665 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17E5C25A1A6FE04E001A6665 /* LaunchScreen.xib */; };
 		17E5C2681A6FE04E001A6665 /* ExchangeAGramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E5C2671A6FE04E001A6665 /* ExchangeAGramTests.swift */; };
+		17E5C2721A6FE1ED001A6665 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E5C2711A6FE1ED001A6665 /* FeedViewController.swift */; };
+		17E5C2741A6FEA84001A6665 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E5C2731A6FEA84001A6665 /* FeedCell.swift */; };
+		17E5C2761A6FEC8D001A6665 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E5C2751A6FEC8D001A6665 /* MobileCoreServices.framework */; };
+		17E5C2781A70029B001A6665 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E5C2771A70029B001A6665 /* FeedItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,13 +34,16 @@
 		17E5C24D1A6FE04E001A6665 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17E5C24E1A6FE04E001A6665 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17E5C2511A6FE04E001A6665 /* ExchangeAGram.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ExchangeAGram.xcdatamodel; sourceTree = "<group>"; };
-		17E5C2531A6FE04E001A6665 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		17E5C2561A6FE04E001A6665 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		17E5C2581A6FE04E001A6665 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		17E5C25B1A6FE04E001A6665 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		17E5C2611A6FE04E001A6665 /* ExchangeAGramTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExchangeAGramTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		17E5C2661A6FE04E001A6665 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17E5C2671A6FE04E001A6665 /* ExchangeAGramTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeAGramTests.swift; sourceTree = "<group>"; };
+		17E5C2711A6FE1ED001A6665 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		17E5C2731A6FEA84001A6665 /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		17E5C2751A6FEC8D001A6665 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		17E5C2771A70029B001A6665 /* FeedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17E5C2761A6FEC8D001A6665 /* MobileCoreServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,11 +87,13 @@
 			isa = PBXGroup;
 			children = (
 				17E5C24E1A6FE04E001A6665 /* AppDelegate.swift */,
-				17E5C2531A6FE04E001A6665 /* ViewController.swift */,
+				17E5C2711A6FE1ED001A6665 /* FeedViewController.swift */,
+				17E5C2731A6FEA84001A6665 /* FeedCell.swift */,
 				17E5C2551A6FE04E001A6665 /* Main.storyboard */,
 				17E5C2581A6FE04E001A6665 /* Images.xcassets */,
 				17E5C25A1A6FE04E001A6665 /* LaunchScreen.xib */,
 				17E5C2501A6FE04E001A6665 /* ExchangeAGram.xcdatamodeld */,
+				17E5C2771A70029B001A6665 /* FeedItem.swift */,
 				17E5C24C1A6FE04E001A6665 /* Supporting Files */,
 			);
 			path = ExchangeAGram;
@@ -93,6 +102,7 @@
 		17E5C24C1A6FE04E001A6665 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				17E5C2751A6FEC8D001A6665 /* MobileCoreServices.framework */,
 				17E5C24D1A6FE04E001A6665 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -215,8 +225,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17E5C2541A6FE04E001A6665 /* ViewController.swift in Sources */,
 				17E5C24F1A6FE04E001A6665 /* AppDelegate.swift in Sources */,
+				17E5C2741A6FEA84001A6665 /* FeedCell.swift in Sources */,
+				17E5C2721A6FE1ED001A6665 /* FeedViewController.swift in Sources */,
+				17E5C2781A70029B001A6665 /* FeedItem.swift in Sources */,
 				17E5C2521A6FE04E001A6665 /* ExchangeAGram.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
