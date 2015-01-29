@@ -21,19 +21,22 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
 
         // Do any additional setup after loading the view.
         
+    }
+
+    override func viewDidAppear(animated: Bool) {
         // Get all feeds from data store
         let request = NSFetchRequest(entityName: "FeedItem")
         let appDelegate: AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
         let context: NSManagedObjectContext = appDelegate.managedObjectContext!
         self.feedArray = context.executeFetchRequest(request, error: nil)!
+        self.collectionView.reloadData()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
     /*
     // MARK: - Navigation
 
@@ -82,6 +85,7 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
         // Get the image data
         let image = info[UIImagePickerControllerOriginalImage] as UIImage
         let imageData = UIImageJPEGRepresentation(image, 1.0)
+        let thumbNailData = UIImageJPEGRepresentation(image, 0.1)
         
         // Create a new feed item
         let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
@@ -91,6 +95,7 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
         // Set properties of new feed item
         feedItem.image = imageData
         feedItem.caption = "test caption"
+        feedItem.thumbnail = thumbNailData
         
         // Save changes
         (UIApplication.sharedApplication().delegate as AppDelegate).saveContext()
@@ -126,4 +131,18 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         return cell
     }
+    
+    // UICollectionViewDelegate
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        // Get the selected FeedItem
+        let thisItem = self.feedArray[indexPath.row] as FeedItem
+        
+        // Create filter view controller and show
+        var filterVC = FilterViewController()
+        filterVC.thisFeedItem = thisItem        
+        self.navigationController?.pushViewController(filterVC, animated: false)
+    }
+    
 }

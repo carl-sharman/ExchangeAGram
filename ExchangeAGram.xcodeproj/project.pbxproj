@@ -16,7 +16,10 @@
 		17E5C2721A6FE1ED001A6665 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E5C2711A6FE1ED001A6665 /* FeedViewController.swift */; };
 		17E5C2741A6FEA84001A6665 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E5C2731A6FEA84001A6665 /* FeedCell.swift */; };
 		17E5C2761A6FEC8D001A6665 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E5C2751A6FEC8D001A6665 /* MobileCoreServices.framework */; };
-		17E5C2781A70029B001A6665 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E5C2771A70029B001A6665 /* FeedItem.swift */; };
+		5C6DB43D1A7A7A9800C7B9E3 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6DB43C1A7A7A9800C7B9E3 /* FeedItem.swift */; };
+		5C6DB4401A7A94BA00C7B9E3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6DB43F1A7A94BA00C7B9E3 /* ProfileViewController.swift */; };
+		5CAA4FF51A70FCF8003549E0 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAA4FF41A70FCF8003549E0 /* FilterViewController.swift */; };
+		5CAA4FF71A7103F7003549E0 /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAA4FF61A7103F7003549E0 /* FilterCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +46,10 @@
 		17E5C2711A6FE1ED001A6665 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		17E5C2731A6FEA84001A6665 /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		17E5C2751A6FEC8D001A6665 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		17E5C2771A70029B001A6665 /* FeedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
+		5C6DB43C1A7A7A9800C7B9E3 /* FeedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
+		5C6DB43F1A7A94BA00C7B9E3 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		5CAA4FF41A70FCF8003549E0 /* FilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		5CAA4FF61A7103F7003549E0 /* FilterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,12 +94,14 @@
 			children = (
 				17E5C24E1A6FE04E001A6665 /* AppDelegate.swift */,
 				17E5C2711A6FE1ED001A6665 /* FeedViewController.swift */,
+				5CAA4FF41A70FCF8003549E0 /* FilterViewController.swift */,
 				17E5C2731A6FEA84001A6665 /* FeedCell.swift */,
+				5CAA4FF61A7103F7003549E0 /* FilterCell.swift */,
+				5C6DB43F1A7A94BA00C7B9E3 /* ProfileViewController.swift */,
 				17E5C2551A6FE04E001A6665 /* Main.storyboard */,
 				17E5C2581A6FE04E001A6665 /* Images.xcassets */,
 				17E5C25A1A6FE04E001A6665 /* LaunchScreen.xib */,
-				17E5C2501A6FE04E001A6665 /* ExchangeAGram.xcdatamodeld */,
-				17E5C2771A70029B001A6665 /* FeedItem.swift */,
+				5C6DB43E1A7A7D0C00C7B9E3 /* Model */,
 				17E5C24C1A6FE04E001A6665 /* Supporting Files */,
 			);
 			path = ExchangeAGram;
@@ -123,6 +131,15 @@
 				17E5C2661A6FE04E001A6665 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5C6DB43E1A7A7D0C00C7B9E3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				17E5C2501A6FE04E001A6665 /* ExchangeAGram.xcdatamodeld */,
+				5C6DB43C1A7A7A9800C7B9E3 /* FeedItem.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,10 +242,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CAA4FF71A7103F7003549E0 /* FilterCell.swift in Sources */,
+				5CAA4FF51A70FCF8003549E0 /* FilterViewController.swift in Sources */,
 				17E5C24F1A6FE04E001A6665 /* AppDelegate.swift in Sources */,
 				17E5C2741A6FEA84001A6665 /* FeedCell.swift in Sources */,
 				17E5C2721A6FE1ED001A6665 /* FeedViewController.swift in Sources */,
-				17E5C2781A70029B001A6665 /* FeedItem.swift in Sources */,
+				5C6DB43D1A7A7A9800C7B9E3 /* FeedItem.swift in Sources */,
+				5C6DB4401A7A94BA00C7B9E3 /* ProfileViewController.swift in Sources */,
 				17E5C2521A6FE04E001A6665 /* ExchangeAGram.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,6 +443,7 @@
 				17E5C26D1A6FE04E001A6665 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		17E5C26E1A6FE04E001A6665 /* Build configuration list for PBXNativeTarget "ExchangeAGramTests" */ = {
 			isa = XCConfigurationList;
@@ -431,6 +452,7 @@
 				17E5C2701A6FE04E001A6665 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
