@@ -22,10 +22,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             diskCapacity: 20 * 1024 * 1024, diskPath: nil)
         NSURLCache.setSharedURLCache(cache)
         
+        // Facebook setup
+        FBLoginView.self
+        FBProfilePictureView.self
+        
         return true
     }
     
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
+        var wasHandled: Bool = FBAppCall.handleOpenURL(url, sourceApplication: sourceApplication)
+        return wasHandled
+    }
+    
     func applicationDidReceiveMemoryWarning(application: UIApplication) {
+        // Allows the application to open up again after the user has validated their login credentials
         NSURLCache.sharedURLCache().removeAllCachedResponses()
     }
 
