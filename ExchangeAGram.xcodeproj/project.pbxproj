@@ -17,8 +17,9 @@
 		17E5C2721A6FE1ED001A6665 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E5C2711A6FE1ED001A6665 /* FeedViewController.swift */; };
 		17E5C2741A6FEA84001A6665 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E5C2731A6FEA84001A6665 /* FeedCell.swift */; };
 		17E5C2761A6FEC8D001A6665 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E5C2751A6FEC8D001A6665 /* MobileCoreServices.framework */; };
-		5C6DB43D1A7A7A9800C7B9E3 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6DB43C1A7A7A9800C7B9E3 /* FeedItem.swift */; };
 		5C6DB4401A7A94BA00C7B9E3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6DB43F1A7A94BA00C7B9E3 /* ProfileViewController.swift */; };
+		5C7CFC201A7FE22600F74E76 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7CFC1F1A7FE22600F74E76 /* MapViewController.swift */; };
+		5CA7BA8C1A812F7F00C51757 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA7BA8B1A812F7F00C51757 /* FeedItem.swift */; };
 		5CAA4FF51A70FCF8003549E0 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAA4FF41A70FCF8003549E0 /* FilterViewController.swift */; };
 		5CAA4FF71A7103F7003549E0 /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAA4FF61A7103F7003549E0 /* FilterCell.swift */; };
 /* End PBXBuildFile section */
@@ -49,8 +50,9 @@
 		17E5C2711A6FE1ED001A6665 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		17E5C2731A6FEA84001A6665 /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		17E5C2751A6FEC8D001A6665 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		5C6DB43C1A7A7A9800C7B9E3 /* FeedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
 		5C6DB43F1A7A94BA00C7B9E3 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		5C7CFC1F1A7FE22600F74E76 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		5CA7BA8B1A812F7F00C51757 /* FeedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedItem.swift; path = ../FeedItem.swift; sourceTree = "<group>"; };
 		5CAA4FF41A70FCF8003549E0 /* FilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		5CAA4FF61A7103F7003549E0 /* FilterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,6 +104,7 @@
 				17E5C2731A6FEA84001A6665 /* FeedCell.swift */,
 				5CAA4FF61A7103F7003549E0 /* FilterCell.swift */,
 				5C6DB43F1A7A94BA00C7B9E3 /* ProfileViewController.swift */,
+				5C7CFC1F1A7FE22600F74E76 /* MapViewController.swift */,
 				1769FB2A1A7BB09E004D2602 /* Bridging-Header.h */,
 				17E5C2551A6FE04E001A6665 /* Main.storyboard */,
 				17E5C2581A6FE04E001A6665 /* Images.xcassets */,
@@ -142,8 +145,8 @@
 		5C6DB43E1A7A7D0C00C7B9E3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5CA7BA8B1A812F7F00C51757 /* FeedItem.swift */,
 				17E5C2501A6FE04E001A6665 /* ExchangeAGram.xcdatamodeld */,
-				5C6DB43C1A7A7A9800C7B9E3 /* FeedItem.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				TargetAttributes = {
 					17E5C2481A6FE04E001A6665 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = C466P4G8JT;
 					};
 					17E5C2601A6FE04E001A6665 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -252,8 +256,9 @@
 				5CAA4FF51A70FCF8003549E0 /* FilterViewController.swift in Sources */,
 				17E5C24F1A6FE04E001A6665 /* AppDelegate.swift in Sources */,
 				17E5C2741A6FEA84001A6665 /* FeedCell.swift in Sources */,
+				5C7CFC201A7FE22600F74E76 /* MapViewController.swift in Sources */,
+				5CA7BA8C1A812F7F00C51757 /* FeedItem.swift in Sources */,
 				17E5C2721A6FE1ED001A6665 /* FeedViewController.swift in Sources */,
-				5C6DB43D1A7A7A9800C7B9E3 /* FeedItem.swift in Sources */,
 				5C6DB4401A7A94BA00C7B9E3 /* ProfileViewController.swift in Sources */,
 				17E5C2521A6FE04E001A6665 /* ExchangeAGram.xcdatamodeld in Sources */,
 			);
@@ -380,13 +385,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/carlsharmanwork/Documents/FacebookSDK,
+					/Users/carlsharman/Documents/FacebookSDK,
 				);
 				INFOPLIST_FILE = ExchangeAGram/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ExchangeAGram/Bridging-Header.h";
 			};
 			name = Debug;
@@ -395,13 +403,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/carlsharmanwork/Documents/FacebookSDK,
+					/Users/carlsharman/Documents/FacebookSDK,
 				);
 				INFOPLIST_FILE = ExchangeAGram/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ExchangeAGram/Bridging-Header.h";
 			};
 			name = Release;

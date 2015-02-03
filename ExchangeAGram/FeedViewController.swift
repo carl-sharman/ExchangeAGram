@@ -9,18 +9,27 @@
 import UIKit
 import MobileCoreServices
 import CoreData
+import MapKit
 
-class FeedViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class FeedViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
     var feedArray: [AnyObject] = []
     
+    var locationManager: CLLocationManager!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.locationManager = CLLocationManager()
+        self.locationManager.delegate = self
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        self.locationManager.requestAlwaysAuthorization()
         
+        self.locationManager.distanceFilter = 100.0
+        self.locationManager.startUpdatingLocation()
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -85,6 +94,8 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
     // UIImagePickerControllerDelegate
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+
+        // Create a new feed item, save it to core data, close the picker and show the new image in the feed view
         
         // Get the image data
         let image = info[UIImagePickerControllerOriginalImage] as UIImage
@@ -96,10 +107,18 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
         let entityDescription = NSEntityDescription.entityForName("FeedItem", inManagedObjectContext: managedObjectContext!)
         let feedItem = FeedItem(entity: entityDescription!, insertIntoManagedObjectContext: managedObjectContext!)
         
-        // Set properties of new feed item
+        // Set general properties of new feed item
         feedItem.image = imageData
         feedItem.caption = "test caption"
         feedItem.thumbnail = thumbNailData
+        
+        // Store our current location
+        feedItem.latitude = self.locationManager.location.coordinate.latitude
+        feedItem.longitude = self.locationManager.location.coordinate.longitude
+        
+        // Create and set a unique ID
+        let UUID = NSUUID().UUIDString
+        feedItem.uniqueID = UUID
         
         // Save changes
         (UIApplication.sharedApplication().delegate as AppDelegate).saveContext()
@@ -147,6 +166,12 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
         var filterVC = FilterViewController()
         filterVC.thisFeedItem = thisItem        
         self.navigationController?.pushViewController(filterVC, animated: false)
+    }
+    
+    // CLLocationManagerDelegate
+    
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        println("locations = \(locations)")
     }
     
 }
